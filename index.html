@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ariel - Fullstack & Data Science</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <span>Embeya shongo ariel</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#achievements">Réalisations</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                    </button>
+                </li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Bonjour, je suis <span class="highlight">Ariel</span></h1>
+                <h2 class="hero-subtitle">Développeur web Fullstack & Data Scientist</h2>
+                <p class="hero-text">Je crée des applications web performantes et des solutions intelligentes basées sur les données.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+                    <a href="#contact" class="btn btn-secondary">Me contacter</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-container">
+                    <img src="images/main.jpg" alt="Photo professionnelle" class="main-photo">
+                    <img src="images/secondary.jpg" alt="Photo secondaire" class="secondary-photo">
+                    <img src="images/tertiary.jpg" alt="Photo tertiaire" class="tertiary-photo">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section about">
+            <div class="section-header">
+                <h2 class="section-title">À propos de moi</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/tertiary.jpg" alt="Photo about">
+                </div>
+                <div class="about-text">
+                    <p>Développeur web Fullstack passionné avec une expertise en React et Laravel, et une solide base en Data Science.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="number">4+</span>
+                            <span class="label">Projets réalisés</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">5</span>
+                            <span class="label">Ans d'expérience</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section skills">
+            <div class="section-header">
+                <h2 class="section-title">Mes Compétences</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="skills-container">      
+            </div>
+            
+            <div class="tech-logos">
+                <img src="images/react.jpg" alt="React" class="logo react-logo">
+                <img src="images/laravel.jpg" alt="Laravel" class="logo laravel-logo">
+                <img src="images/js.jpg" alt="Laravel" class="logo laravel-logo">
+                <img src="images/nodejs.jpg" alt="Laravel" class="logo laravel-logo">
+
+            </div>
+        </section>
+
+        <section id="projects" class="section projects">
+            <div class="section-header">
+                <h2 class="section-title">Mes Projets</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/project1.png" alt="Projet 1">
+                    </div>
+                    <div class="project-info">
+                        <h3>Application de e commerce</h3>
+                        <div class="project-tech">
+                            <span>Laravel</span>
+                        </div>
+                        
+                    </div>
+                </div>
+                 <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/project1.png" alt="Projet 1">
+                    </div>
+                    <div class="project-info">
+                        <h3>reseau social </h3>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Laravel</span>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/project1.png" alt="Projet 1">
+                    </div>
+                    <div class="project-info">
+                        <h3>prediction de match</h3>
+                        <div class="project-tech">
+                            <span>python</span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <section id="achievements" class="section achievements">
+            <div class="section-header">
+                <h2 class="section-title">Mes Réalisations</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="achievements-container">
+                <div class="achievement-card">
+                    <div class="achievement-image">
+                        <img src="images/conference.jpg" alt="Conférence">
+                        <div class="achievement-date">juillet 2024</div>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>concours softday</h3>
+                        <p>creation d'un reseau social</p>
+                        <a href="#" class="btn btn-outline">
+                            <i class="fas fa-images"></i> Voir les photos
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="achievements-container">
+                <div class="achievement-card">
+                    <div class="achievement-image">
+                        <img src="images/tertiary.jpg" alt="Conférence">
+                        <div class="achievement-date">10 mai 2025</div>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>journée porte ouverte UNH</h3>
+                        <p>creation d'une plateforme de prediction de match de foot</p>
+                        <a href="#" class="btn btn-outline">
+                            <i class="fas fa-images"></i> Voir les photos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <div class="section-header">
+                <h2 class="section-title">Contactez-moi</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="detail">
+                        <i class="fas fa-envelope"></i>
+                        <span>arielshongoordi@gmail.com</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/arielembeya223"><i class="fab fa-github"></i></a>
+                        <a href="https://github.com/arielembeya223"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Votre email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Votre message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                
+            </div>
+            <div class="footer-copy">
+                &copy; <span id="year"></span> Embeya Shongo Ariel
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
