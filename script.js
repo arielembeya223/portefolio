@@ -92,17 +92,17 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Images pour le projet fraud detection (basées sur vos noms de fichiers)
         const fraudImages = [
-            'Whatsapp Image 2025-12-31 at 10.02.44 PM.jpeg',
-            'Whatsapp Image 2025-12-31 at 10.03.04 PM.jpeg',
-            'Whatsapp Image 2025-12-31 at 10.03.37 PM.jpeg',
-            'Whatsapp Image 2025-12-31 at 10.04.08 PM.jpeg'
+            'fraud1.jpeg',
+            'fraud2.jpeg',
+            'fraud3.jpeg',
+            'fraud4.jpeg'
         ];
         
         // Images pour le projet free
         const freeImages = [
-            'Whatsapp Image 2025-12-31 at 9.28.30 PM.jpeg',
-            'Whatsapp Image 2025-12-31 at 9.28.59 PM.jpeg',
-            'Whatsapp Image 2025-12-31 at 9.36.19 PM.jpeg'
+            'free1.jpeg',
+            'free2.jpeg',
+            'free3.jpeg'
         ];
         
         carousels.forEach(carousel => {
