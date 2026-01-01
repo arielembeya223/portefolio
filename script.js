@@ -1,13 +1,23 @@
-  document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
+    // Configuration des chemins selon votre structure
+    const CONFIG = {
+        certificationsPath: 'certifications/',
+        fraudImagesPath: 'images/fraud/',
+        freeImagesPath: 'images/free/',
+        githubProfile: 'https://github.com/arielembeya223',
+        projectRepos: {
+            fraud: 'https://github.com/arielembeya223/fraude-detection',
+            free: 'https://github.com/arielembeya223/free-project'
+        }
+    };
+
     // Gestion du thème sombre/clair
     const themeToggle = document.getElementById('theme-toggle');
     const html = document.documentElement;
     
-    // Vérifier la préférence utilisateur
     const savedTheme = localStorage.getItem('theme') || 'dark';
     html.setAttribute('data-theme', savedTheme);
     
-    // Basculer le thème
     themeToggle.addEventListener('click', () => {
         const currentTheme = html.getAttribute('data-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
@@ -23,7 +33,6 @@
         navLinks.classList.toggle('active');
         burger.classList.toggle('toggle');
         
-        // Animation des lignes du burger
         document.querySelectorAll('.burger div').forEach((line, index) => {
             line.style.transition = `transform 0.3s ease ${index * 0.1}s`;
         });
@@ -36,6 +45,118 @@
             burger.classList.remove('toggle');
         });
     });
+    
+    // Charger les certifications
+    function loadCertifications() {
+        const grid = document.querySelector('.certifications-grid');
+        if (!grid) return;
+        
+        // Noms de vos certifications réelles
+        const certifications = [
+            { 
+                name: "Certification Data Science", 
+                date: "2024",
+                filename: "certif-1.jpeg"
+            },
+            { 
+                name: "Certification Fullstack Development", 
+                date: "2024",
+                filename: "certif-2.jpeg"
+            }
+        ];
+        
+        certifications.forEach((cert, index) => {
+            const card = document.createElement('div');
+            card.className = 'certification-card';
+            card.innerHTML = `
+                <div class="certification-image">
+                    <img src="${CONFIG.certificationsPath}${cert.filename}" alt="${cert.name}"
+                         onerror="this.onerror=null; this.src='https://via.placeholder.com/400x200/6c5ce7/ffffff?text=${encodeURIComponent(cert.name)}'">
+                </div>
+                <div class="certification-info">
+                    <h3>${cert.name}</h3>
+                    <p>Certification obtenue en ${cert.date}</p>
+                    <span class="certification-date">${cert.date}</span>
+                </div>
+            `;
+            grid.appendChild(card);
+            
+            // Observer la carte
+            observer.observe(card);
+        });
+    }
+    
+    // Configurer les carrousels de projets avec vos images réelles
+    function setupProjectCarousels() {
+        const carousels = document.querySelectorAll('.project-carousel');
+        
+        // Images pour le projet fraud detection (basées sur vos noms de fichiers)
+        const fraudImages = [
+            'Whatsapp Image 2025-12-31 at 10.02.44 PM.jpeg',
+            'Whatsapp Image 2025-12-31 at 10.03.04 PM.jpeg',
+            'Whatsapp Image 2025-12-31 at 10.03.37 PM.jpeg',
+            'Whatsapp Image 2025-12-31 at 10.04.08 PM.jpeg'
+        ];
+        
+        // Images pour le projet free
+        const freeImages = [
+            'Whatsapp Image 2025-12-31 at 9.28.30 PM.jpeg',
+            'Whatsapp Image 2025-12-31 at 9.28.59 PM.jpeg',
+            'Whatsapp Image 2025-12-31 at 9.36.19 PM.jpeg'
+        ];
+        
+        carousels.forEach(carousel => {
+            const projectType = carousel.dataset.project;
+            const imagePath = projectType === 'fraud' ? CONFIG.fraudImagesPath : CONFIG.freeImagesPath;
+            const images = projectType === 'fraud' ? fraudImages : freeImages;
+            
+            // Créer les slides
+            images.forEach((img, index) => {
+                const slide = document.createElement('div');
+                slide.className = `carousel-slide ${index === 0 ? 'active' : ''}`;
+                slide.innerHTML = `<img src="${imagePath}${img}" alt="Image ${index + 1} du projet ${projectType}"
+                                     onerror="this.onerror=null; this.src='https://via.placeholder.com/600x400/6c5ce7/ffffff?text=${projectType === 'fraud' ? 'Fraud+Detection' : 'Free+Project'}+${index + 1}'">`;
+                carousel.appendChild(slide);
+            });
+            
+            // Ajouter les contrôles
+            const controls = document.createElement('div');
+            controls.className = 'carousel-controls';
+            images.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.className = `carousel-dot ${index === 0 ? 'active' : ''}`;
+                dot.addEventListener('click', () => showSlide(carousel, index));
+                controls.appendChild(dot);
+            });
+            carousel.appendChild(controls);
+            
+            // Démarrer le carousel automatique
+            startCarousel(carousel);
+        });
+    }
+    
+    function showSlide(carousel, index) {
+        const slides = carousel.querySelectorAll('.carousel-slide');
+        const dots = carousel.querySelectorAll('.carousel-dot');
+        
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+    }
+    
+    function startCarousel(carousel) {
+        let currentIndex = 0;
+        const slides = carousel.querySelectorAll('.carousel-slide');
+        
+        if (slides.length === 0) return;
+        
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(carousel, currentIndex);
+        }, 3000);
+    }
     
     // Animation des compétences
     const animateSkills = () => {
@@ -57,8 +178,8 @@
         });
     }, { threshold: 0.1 });
     
-    // Éléments à observer
-    document.querySelectorAll('.section, .skill-bar, .project-card, .achievement-card').forEach(el => {
+    // Observer tous les éléments
+    document.querySelectorAll('.section, .skill-bar, .project-card, .certification-card').forEach(el => {
         observer.observe(el);
     });
     
@@ -99,10 +220,24 @@
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
-            // Ici vous pouvez ajouter le code pour envoyer le formulaire
             alert('Message envoyé! (Fonctionnalité à implémenter)');
             contactForm.reset();
         });
     }
+    
+    // Ajouter le lien GitHub sur les photos de profil
+    document.querySelectorAll('.profile-link, .about-image a').forEach(link => {
+        link.href = CONFIG.githubProfile;
+        link.target = '_blank';
+    });
+    
+    // Initialiser les fonctionnalités
+    loadCertifications();
+    setupProjectCarousels();
+    
+    // Vérifier les chemins des images dans la console pour déboguer
+    console.log('Configuration des chemins:');
+    console.log('- Certifications:', CONFIG.certificationsPath);
+    console.log('- Images fraud:', CONFIG.fraudImagesPath);
+    console.log('- Images free:', CONFIG.freeImagesPath);
 });

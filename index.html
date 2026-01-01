@@ -22,7 +22,7 @@
                 <li><a href="#about">À propos</a></li>
                 <li><a href="#skills">Compétences</a></li>
                 <li><a href="#projects">Projets</a></li>
-                <li><a href="#achievements">Réalisations</a></li>
+                <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li>
                     <button id="theme-toggle" class="theme-toggle">
@@ -52,9 +52,9 @@
             </div>
             <div class="hero-image">
                 <div class="image-container">
-                    <img src="images/main.jpg" alt="Photo professionnelle" class="main-photo">
-                    <img src="images/secondary.jpg" alt="Photo secondaire" class="secondary-photo">
-                    <img src="images/tertiary.jpg" alt="Photo tertiaire" class="tertiary-photo">
+                    <a href="https://github.com/arielembeya223" class="profile-link">
+                        <img src="images/moi-removebg-preview.png" alt="Photo professionnelle" class="main-photo">
+                    </a>
                 </div>
             </div>
         </section>
@@ -66,7 +66,9 @@
             </div>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="images/tertiary.jpg" alt="Photo about">
+                    <a href="https://github.com/arielembeya223">
+                        <img src="images/tertiary.jpg" alt="Photo about">
+                    </a>
                 </div>
                 <div class="about-text">
                     <p>Développeur web Fullstack passionné avec une expertise en React et Laravel, et une solide base en Data Science.</p>
@@ -95,9 +97,8 @@
             <div class="tech-logos">
                 <img src="images/react.jpg" alt="React" class="logo react-logo">
                 <img src="images/Laravel.jpg" alt="Laravel" class="logo laravel-logo">
-                <img src="images/js.jpg" alt="Laravel" class="logo laravel-logo">
-                <img src="images/nodejs.jpg" alt="Laravel" class="logo laravel-logo">
-
+                <img src="images/js.jpg" alt="JavaScript" class="logo js-logo">
+                <img src="images/nodejs.jpg" alt="Node.js" class="logo nodejs-logo">
             </div>
         </section>
 
@@ -109,79 +110,58 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/project1.png" alt="Projet 1">
+                        <div class="project-carousel" data-project="fraud">
+                            <!-- Les images seront ajoutées dynamiquement par JavaScript -->
+                        </div>
                     </div>
                     <div class="project-info">
-                        <h3>Application de e commerce</h3>
+                        <h3>Détection de Fraude Financière</h3>
+                        <p>Système de détection de fraude utilisant le machine learning pour analyser les transactions financières en temps réel.</p>
                         <div class="project-tech">
-                            <span>Laravel</span>
+                            <span>Python</span>
+                            <span>Machine Learning</span>
+                            <span>Pandas</span>
+                            <span>Scikit-learn</span>
                         </div>
-                        
-                    </div>
-                </div>
-                 <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/project1.png" alt="Projet 1">
-                    </div>
-                    <div class="project-info">
-                        <h3>reseau social </h3>
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>Laravel</span>
+                        <div class="project-links">
+                            <a href="https://github.com/arielembeya223/fraude-detection" class="btn btn-outline" target="_blank">
+                                <i class="fab fa-github"></i> Voir sur GitHub
+                            </a>
                         </div>
-                        
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/project1.png" alt="Projet 1">
+                        <div class="project-carousel" data-project="free">
+                            <!-- Les images seront ajoutées dynamiquement par JavaScript -->
+                        </div>
                     </div>
                     <div class="project-info">
-                        <h3>prediction de match</h3>
+                        <h3>Free Project</h3>
+                        <p>Application web complète avec fonctionnalités avancées de gestion et d'analyse de données.</p>
                         <div class="project-tech">
-                            <span>python</span>
+                            <span>React</span>
+                            <span>Laravel</span>
+                            <span>MySQL</span>
+                            <span>REST API</span>
                         </div>
-                        
+                        <div class="project-links">
+                            <a href="https://github.com/arielembeya223/free-project" class="btn btn-outline" target="_blank">
+                                <i class="fab fa-github"></i> Voir sur GitHub
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-            
         </section>
 
-        <section id="achievements" class="section achievements">
+        <section id="certifications" class="section certifications">
             <div class="section-header">
-                <h2 class="section-title">Mes Réalisations</h2>
+                <h2 class="section-title">Mes Certifications</h2>
                 <div class="underline"></div>
             </div>
-            <div class="achievements-container">
-                <div class="achievement-card">
-                    <div class="achievement-image">
-                        <img src="images/conference.jpg" alt="Conférence">
-                        <div class="achievement-date">juillet 2024</div>
-                    </div>
-                    <div class="achievement-content">
-                        <h3>concours softday</h3>
-                        <p>creation d'un reseau social</p>
-                        <a href="#" class="btn btn-outline">
-                            <i class="fas fa-images"></i> Voir les photos
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="achievements-container">
-                <div class="achievement-card">
-                    <div class="achievement-image">
-                        <img src="images/tertiary.jpg" alt="Conférence">
-                        <div class="achievement-date">10 mai 2025</div>
-                    </div>
-                    <div class="achievement-content">
-                        <h3>journée porte ouverte UNH</h3>
-                        <p>creation d'une plateforme de prediction de match de foot</p>
-                        <a href="#" class="btn btn-outline">
-                            <i class="fas fa-images"></i> Voir les photos
-                        </a>
-                    </div>
-                </div>
+            <div class="certifications-grid">
+                <!-- Les certifications seront chargées dynamiquement -->
             </div>
         </section>
 
@@ -197,7 +177,7 @@
                         <span>arielshongoordi@gmail.com</span>
                     </div>
                     <div class="social-links">
-                        <a href="https://github.com/arielembeya223"><i class="fab fa-github"></i></a>
+                        <a href="https://github.com/arielembeya223" target="_blank"><i class="fab fa-github"></i></a>
                         <a href="https://github.com/arielembeya223"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
