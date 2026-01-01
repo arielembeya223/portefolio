@@ -1119,3 +1119,86 @@ body {
     padding: 1rem;
   }
 }
+/* Ajoutez ces styles à votre fichier style.css existant */
+
+/* TECH LOGOS améliorés */
+.tech-logos {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 4rem;
+    flex-wrap: wrap;
+    padding: 2rem;
+    background-color: var(--darker);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.tech-logos img {
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    filter: grayscale(20%);
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+}
+
+.tech-logos img:hover {
+    transform: translateY(-5px) scale(1.1);
+    opacity: 1;
+    filter: grayscale(0%);
+    box-shadow: 0 8px 20px rgba(108, 92, 231, 0.3);
+}
+
+/* Styles responsifs pour les logos */
+@media (max-width: 992px) {
+    .tech-logos {
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    
+    .tech-logos img {
+        height: 50px;
+        width: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tech-logos {
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .tech-logos img {
+        height: 45px;
+        width: 45px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 576px) {
+    .tech-logos {
+        gap: 0.8rem;
+    }
+    
+    .tech-logos img {
+        height: 40px;
+        width: 40px;
+        padding: 6px;
+    }
+}
+
+@media (max-width: 400px) {
+    .tech-logos {
+        gap: 0.6rem;
+    }
+    
+    .tech-logos img {
+        height: 35px;
+        width: 35px;
+        padding: 5px;
+    }
+}
